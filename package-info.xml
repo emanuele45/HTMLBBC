@@ -23,7 +23,7 @@
 	<version>1.0</version>
 	<type>modification</type>
 	<install for="1.0 - 1.0.99">
-		<readme type="inline">[color=red][b]This introduces a security risk![/b][/color][br]Use at [b]your own risk.[/b]</readme>
+		<readme type="inline" parsebbc="true">[color=red][b]This introduces a security risk![/b][/color][br]Use at [b]your own risk.[/b]</readme>
 		<require-file name="HTMLBBC.subs.php" destination="SUBSDIR" />
 		<hook hook="integrate_bbc_codes" file="SUBSDIR/HTMLBBC.subs.php" function="HTMLBBC::bbc_codes" />
 		<hook hook="integrate_preparse_code" file="SUBSDIR/HTMLBBC.subs.php" function="HTMLBBC::preparse_code" />
