@@ -15,12 +15,12 @@
  * copyright:	2011 Simple Machines (http://www.simplemachines.org)
  * license:  	BSD, See included LICENSE.TXT for terms and conditions.
  *
- * @version 1.0
+ * @version 1.1
  */
 	]]></license>
 	<id>emanuele:htmlbbcode</id>
 	<name>HTML BBCode</name>
-	<version>1.0</version>
+	<version>1.1</version>
 	<type>modification</type>
 	<install for="1.0 - 1.0.99">
 		<readme type="inline" parsebbc="true">[color=red][b]This introduces a security risk![/b][/color][br]Use at [b]your own risk.[/b]</readme>
@@ -33,6 +33,19 @@
 		<remove-file name="SUBSDIR/HTMLBBC.subs.php" />
 		<hook reverse="true" hook="integrate_bbc_codes" file="SUBSDIR/HTMLBBC.subs.php" function="HTMLBBC::bbc_codes" />
 		<hook reverse="true" hook="integrate_preparse_code" file="SUBSDIR/HTMLBBC.subs.php" function="HTMLBBC::preparse_code" />
+		<hook reverse="true" hook="integrate_unpreparse_code" file="SUBSDIR/HTMLBBC.subs.php" function="HTMLBBC::unpreparse_code" />
+	</uninstall>
+	<install for="1.1 - 1.1.99">
+		<readme type="inline" parsebbc="true">[color=red][b]This introduces a security risk![/b][/color][br]Use at [b]your own risk.[/b]</readme>
+		<require-file name="/1.1/HTMLBBC.subs.php" destination="SUBSDIR" />
+		<hook hook="bbc_codes_parsing" file="SUBSDIR/HTMLBBC.subs.php" function="HTMLBBC::bbc_codes" />
+		<hook hook="integrate_preparse_tokenized_code" file="SUBSDIR/HTMLBBC.subs.php" function="HTMLBBC::preparse_tokenized_code" />
+		<hook hook="integrate_unpreparse_code" file="SUBSDIR/HTMLBBC.subs.php" function="HTMLBBC::unpreparse_code" />
+	</install>
+	<uninstall for="1.1 - 1.1.99">
+		<remove-file name="SUBSDIR/HTMLBBC.subs.php" />
+		<hook reverse="true" hook="bbc_codes_parsing" file="SUBSDIR/HTMLBBC.subs.php" function="HTMLBBC::bbc_codes" />
+		<hook reverse="true" hook="integrate_preparse_tokenized_code" file="SUBSDIR/HTMLBBC.subs.php" function="HTMLBBC::preparse_tokenized_code" />
 		<hook reverse="true" hook="integrate_unpreparse_code" file="SUBSDIR/HTMLBBC.subs.php" function="HTMLBBC::unpreparse_code" />
 	</uninstall>
 </package-info>
