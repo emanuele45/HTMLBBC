@@ -3,7 +3,7 @@
 ### Introduction
 Reintroduces the HTML bbcode tag.
 
-** Even though the HTML bbcode can be used only by administrators, it is a potential security risk! **
+**Even though the HTML bbcode can be used only by administrators, it is a potential security risk!**
 
 Consider the creatio of a bbcode specific for the effect you want to obtain.
 
